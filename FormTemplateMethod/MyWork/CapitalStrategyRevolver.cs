@@ -4,13 +4,13 @@
     {
         public override double Capital(Loan loan)
         {
-            return (loan.OutstandingRiskAmount() * Duration(loan) * RiskFactorFor(loan))
+            return (RiskAmountFor(loan) * Duration(loan) * RiskFactorFor(loan))
                         + (loan.UnusedRiskAmount() * Duration(loan) * UnusedRiskFactorFor(loan));
         }
 
         public override double RiskAmountFor(Loan loan)
         {
-            throw new System.NotImplementedException();
+            return loan.OutstandingRiskAmount();
         }
 
         private double UnusedRiskFactorFor(Loan loan)
