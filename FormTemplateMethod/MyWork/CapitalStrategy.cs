@@ -9,6 +9,8 @@ namespace FormTemplateMethod.MyWork
 
         public abstract double Capital(Loan loan);
 
+        public abstract double RiskAmountFor(Loan loan);
+        
         protected double RiskFactorFor(Loan loan)
         {
             return RiskFactor.GetFactors().ForRating(loan.GetRiskRating());

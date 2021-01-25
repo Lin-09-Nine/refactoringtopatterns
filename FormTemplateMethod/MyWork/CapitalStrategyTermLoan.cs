@@ -10,7 +10,7 @@ namespace FormTemplateMethod.MyWork
             return RiskAmountFor(loan) * Duration(loan) * RiskFactorFor(loan);
         }
 
-        private static double RiskAmountFor(Loan loan)
+        public override double RiskAmountFor(Loan loan)
         {
             return loan.GetCommitment();
         }

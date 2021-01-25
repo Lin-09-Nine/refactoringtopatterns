@@ -8,6 +8,11 @@
                         + (loan.UnusedRiskAmount() * Duration(loan) * UnusedRiskFactorFor(loan));
         }
 
+        public override double RiskAmountFor(Loan loan)
+        {
+            throw new System.NotImplementedException();
+        }
+
         private double UnusedRiskFactorFor(Loan loan)
         {
             return UnusedRiskFactors.GetFactors().ForRating(loan.GetRiskRating());
