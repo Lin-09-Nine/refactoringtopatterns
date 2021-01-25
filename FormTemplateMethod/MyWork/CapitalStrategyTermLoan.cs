@@ -5,11 +5,6 @@ namespace FormTemplateMethod.MyWork
     {
         private readonly double EPSILON = 0.001;
 
-        public override double Capital(Loan loan)
-        {
-            return RiskAmountFor(loan) * Duration(loan) * RiskFactorFor(loan);
-        }
-
         public override double RiskAmountFor(Loan loan)
         {
             return loan.GetCommitment();
